@@ -12,12 +12,16 @@
 include 'Connect.php'
 
 //här gör jag min startsida använder POST för att skicka infon användaren skriver in.
- ?>
-<form action="Login.php" method="POST">
+?>
+<div class ="login">
+<div class="input">
+<form action="Login.php" method="POST" Login>
 	<input type="text" name="username" placeholder="Username"><br>
 	<input type="Password" name="pw" placeholder="Password"><br>
 	<button>LOGIN</button>
 </form>
+</div>
+</div>
 
 </body>
 
