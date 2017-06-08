@@ -29,6 +29,11 @@ include 'Connect.php'
 </div>
 </div>
 
+<?php
+//När jag trycker på logout knappes så ska jag inte kunna återgå till loggedin sidan genom sökfältet.
+session_destroy();
+?>
+
 </body>
 
 </html>
