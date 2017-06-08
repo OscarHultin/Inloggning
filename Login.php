@@ -15,13 +15,14 @@ $sql = "SELECT * FROM newuser WHERE username = '$username' AND pw ='$pw'";
 $result = mysqli_query($conn, $sql);
 
 //Här kollar jag om användaren har skrivit in rätt username eller password, kollar då om $row skilljer sig från $result
-//skriver man in rätt så displayas "You are now logged in!"
+//har användaren skrivit in rätt så blir man tagen till en annan sida och då inloggad
 //skriver man in fel så displayas "Wrong username or password"
 if (!$row = mysqli_fetch_assoc($result)){
 
 	echo "Wrong username or password";
 }else {
 	$_SESSION['id'] = $row['id']; 
-	echo "You are now logged in!";
+    header ("Location: loggedin.php");
 }
 
+?>
