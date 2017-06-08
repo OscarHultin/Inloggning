@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 //använder include för att inkludera sidan connect. 
 include 'Connect.php';
 
@@ -23,9 +25,10 @@ if (!$row = mysqli_fetch_assoc($result)){
 	echo "Wrong username or password";
 }else {
 	//Sparar username och pw.
+	$_SESSION['log'] = true;
 	$_SESSION['username'] = $row['username'];
 	$_SESSION['pw'] = $row['pw']; 
-    header ("Location: loggedin.php");
+    header ("Location:loggedin.php");
 }
 
 ?>
