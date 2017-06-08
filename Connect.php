@@ -4,7 +4,7 @@
 $conn = mysqli_connect("localhost", "root", "", "login");
 
 //Skapar en if-sats att om connection fail med databasen så ska programmet dö
-//och då displayas också ett fel medelande
+//och då displayas också ett felmeddelande
 if(!$conn){
 	die("Connection failed: ".mysqli_connect_error());
 }
