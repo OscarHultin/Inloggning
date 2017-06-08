@@ -5,8 +5,9 @@ include 'Connect.php';
 
 //Gör 2 variabler som jag sätter till vad användare skriver in
 //med hjälp av $_POST.
-$username = $_POST['username'];
-$pw = $_POST['pw'];
+//Lägger till FILTER_SANITIZE för att förhindra sql attacker, så man inte kan skriva speciella tecken i sökfältet.
+$username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS);
+$pw = filter_input(INPUT_POST, 'pw', FILTER_SANITIZE_SPECIAL_CHARS);
 
 //Gör variablen $sql där jag använder kommandot SELECT från mitt table "newuser" för att få ut användaren.
 $sql = "SELECT * FROM newuser WHERE username = '$username' AND pw ='$pw'";
@@ -21,7 +22,9 @@ if (!$row = mysqli_fetch_assoc($result)){
 
 	echo "Wrong username or password";
 }else {
-	$_SESSION['id'] = $row['id']; 
+	//Sparar username och pw.
+	$_SESSION['username'] = $row['username'];
+	$_SESSION['pw'] = $row['pw']; 
     header ("Location: loggedin.php");
 }
 
