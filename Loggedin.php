@@ -1,3 +1,9 @@
+<?php
+//Startar session så att den är igång på sidan
+   session_start();
+?>
+
+
 <!DOCTYPE HTML>
 <html>
 <head>
