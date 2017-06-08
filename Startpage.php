@@ -8,6 +8,9 @@
 <body>
 
 <?php 
+//använder include för att inkludera sidan connect. 
+include 'Connect.php'
+
 //här gör jag min startsida använder POST för att skicka infon användaren skriver in.
  ?>
 <form action="Login.php" method="POST">
