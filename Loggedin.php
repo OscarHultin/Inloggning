@@ -20,7 +20,7 @@
 <div class ="login">
 <div class="input">
 <h1> You are now logged in!</h1>
-<form action="Startpage.php">
+<form action="Startpage.php" method="post">
 <button>Logout</button>
 </form>
 </div>
